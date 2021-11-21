@@ -9,7 +9,7 @@ function calculo(a, b) {
     setTimeout(function () {
       resolve(a + b);
       console.log(a + b);
-    }, 1000);
+    }, 3000);
   });
 }
 
