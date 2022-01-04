@@ -3,4 +3,5 @@
 ### Comandos
 
 `yarn` -> baixar as dependências
-`yarn tsc` -> transpila o código Typescript pata javascript
+
+`yarn tsc` -> transpila o código Typescript para javascript
