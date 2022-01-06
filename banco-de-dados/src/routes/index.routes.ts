@@ -8,17 +8,11 @@ const routes = Router();
  * Rota de cadastro de Usuário
  */
 routes.post("/users", async (request: Request, response: Response) => {
+  const data = request.body;
+
   let ormRepository: Repository<User>; // váriavel do tipo repositório de User
 
   ormRepository = getRepository(User); // conecta com a tabela users do bando de dados
-
-  const data = {
-    // dados do usuário que será criado no banco.
-    nome: "Milena",
-    idade: 3,
-    cpf: "000.000.000-00",
-    telefone: "00 00000-0000",
-  };
 
   const user = ormRepository.create(data); // Cria uma instancia de User
 
