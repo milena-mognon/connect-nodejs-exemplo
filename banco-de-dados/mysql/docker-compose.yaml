@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  db:
+    image: mysql:5.7
+    command: --innodb-use-native-aio=0
+    container_name: mysqldb
+    tty: true
+    environment:
+      - MYSQL_DATABASE=connect
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - 3306:3306
+    networks:
+      - node-network
+
+networks:
+  node-network:
+    driver: bridge
