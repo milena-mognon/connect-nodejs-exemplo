@@ -12,7 +12,7 @@ routes.post("/users", async (request: Request, response: Response) => {
 
   let ormRepository: Repository<User>; // váriavel do tipo repositório de User
 
-  ormRepository = getRepository(User); // conecta com a tabela users do bando de dados
+  ormRepository = getRepository(User); // conecta com a tabela users do banco de dados
 
   const user = ormRepository.create(data); // Cria uma instancia de User
 
@@ -27,7 +27,7 @@ routes.post("/users", async (request: Request, response: Response) => {
 routes.get("/users", async (request: Request, response: Response) => {
   let ormRepository: Repository<User>; // váriavel do tipo repositório de User
 
-  ormRepository = getRepository(User); // conecta com a tabela users do bando de dados
+  ormRepository = getRepository(User); // conecta com a tabela users do banco de dados
 
   const users = await ormRepository.find(); // busca todos os usuários
 
