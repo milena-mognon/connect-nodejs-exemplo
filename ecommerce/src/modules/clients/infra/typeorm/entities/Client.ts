@@ -18,6 +18,9 @@ export default class Client {
   email: string;
 
   @Column()
+  cpf: string;
+
+  @Column()
   telefone: string;
 
   @Column()
