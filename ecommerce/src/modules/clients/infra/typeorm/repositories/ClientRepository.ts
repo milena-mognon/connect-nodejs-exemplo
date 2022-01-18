@@ -1,6 +1,6 @@
 import IClientDTO from "modules/clients/dtos/IClientDTO";
 import IClientRepository from "modules/clients/repositories/IClientRepository";
-import { getRepository, Repository } from "typeorm";
+import { DeleteResult, getRepository, Repository } from "typeorm";
 import Client from "../entities/Client";
 
 /**
@@ -13,6 +13,10 @@ export default class ClientRepository implements IClientRepository {
 
   constructor() {
     this.ormRepository = getRepository(Client);
+  }
+
+  async delete(id: number): Promise<DeleteResult> {
+    return this.ormRepository.delete(id);
   }
 
   async update(data: IClientDTO): Promise<Client> {

@@ -15,4 +15,6 @@ routes.get("/:id", ClientsController.findById);
 
 routes.put("/:id", ClientsController.update);
 
+routes.delete("/:id", ClientsController.delete);
+
 export default routes;

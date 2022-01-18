@@ -3,6 +3,7 @@ import FindAllClientsService from "../../../services/FindAllClientsService";
 import CreateClientService from "../../../services/CreateClientService";
 import FindClientByIdService from "../../../services/FindClientByIdService";
 import UpdateClientService from "../../../services/UpdateClientService";
+import DeleteClientService from "../../../services/DeleteClientService";
 
 /**
  * O controller tem acesso as requisições e é o responsável por enviar uma
@@ -53,6 +54,15 @@ class ClientsController {
     const client = await updateClientService.execute(data_to_update);
 
     return response.json(client);
+  }
+  async delete(request: Request, response: Response): Promise<Response> {
+    const { id } = request.params;
+
+    const deleteClientService = new DeleteClientService();
+
+    const result = await deleteClientService.execute(Number(id));
+
+    return response.json(result);
   }
 }
 
