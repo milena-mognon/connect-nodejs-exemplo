@@ -12,6 +12,8 @@ export default interface IClientRepository {
    */
   create(data: IClientDTO): Promise<Client>;
   list(): Promise<Client[]>;
+  findById(id: number): Promise<Client | undefined>;
+  update(data: IClientDTO): Promise<Client>;
 
   // fazer outros médodos aqui
 }

@@ -15,6 +15,17 @@ export default class ClientRepository implements IClientRepository {
     this.ormRepository = getRepository(Client);
   }
 
+  async update(data: IClientDTO): Promise<Client> {
+    const client = await this.ormRepository.save(data);
+    return client;
+  }
+
+  async findById(id: number): Promise<Client | undefined> {
+    const client = await this.ormRepository.findOne(id);
+
+    return client;
+  }
+
   async list(): Promise<Client[]> {
     const clients = await this.ormRepository.find();
 
