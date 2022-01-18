@@ -11,7 +11,8 @@ import ClientRepository from "../infra/typeorm/repositories/ClientRepository";
  * Todas as operações/regras/verificações que precisam ser feitas para que
  * o usuário seja cadastrado devem ser feitas aqui
  *
- * Como um service só tem uma função ele deve ter apenas um método público
+ * Como um service só tem uma função ele deve ter apenas UM método público,
+ * geralmente chamado de execute.
  */
 export default class CreateClientService {
   public async execute(data: IClientDTO): Promise<Client> {

@@ -5,7 +5,7 @@ import Client from "../entities/Client";
 
 /**
  * É nesse arquivo que serão feitas todas as conexões com o banco de dados
- * Ele implementa a Interface de IClientREpository portanto, sempre
+ * Ele implementa a Interface de IClientRepository portanto, sempre
  * que precisar de um novo método ele deve ser criado na interface também
  */
 export default class ClientRepository implements IClientRepository {

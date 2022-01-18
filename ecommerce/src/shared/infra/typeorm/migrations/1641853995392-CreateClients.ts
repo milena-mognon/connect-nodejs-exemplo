@@ -30,10 +30,16 @@ export default class CreateClients1641853995392 implements MigrationInterface {
             isNullable: false,
           },
           {
+            name: "cpf",
+            type: "varchar",
+            length: "20",
+            isNullable: true,
+          },
+          {
             name: "data_nascimento",
             type: "varchar",
             length: "150",
-            isNullable: false,
+            isNullable: true,
           },
           {
             name: "created_at",

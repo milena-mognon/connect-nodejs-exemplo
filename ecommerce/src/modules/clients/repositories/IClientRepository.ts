@@ -7,8 +7,10 @@ import Client from "../infra/typeorm/entities/Client";
  */
 export default interface IClientRepository {
   /**
-   * data são os dados do Cliente, deve ter o tipo IClientDTO
+   * data são os dados do Cliente, deve ter do tipo IClientDTO
    * Promise<Client> é o tipo do retorno do método
    */
   create(data: IClientDTO): Promise<Client>;
+
+  // fazer outros médodos aqui
 }
