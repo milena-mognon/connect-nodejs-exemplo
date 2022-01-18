@@ -9,4 +9,6 @@ const routes = Router();
 
 routes.post("/", ClientsController.create);
 
+routes.get("/", ClientsController.list);
+
 export default routes;

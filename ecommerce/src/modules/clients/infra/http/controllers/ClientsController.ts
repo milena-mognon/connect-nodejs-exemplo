@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import FindAllClientsService from "../../../services/FindAllClientsService";
 import CreateClientService from "../../../services/CreateClientService";
 
 /**
@@ -16,6 +17,14 @@ class ClientsController {
     const client = await createClientService.execute(data);
 
     return response.json(client);
+  }
+
+  async list(request: Request, response: Response) {
+    const listAllClientsService = new FindAllClientsService();
+
+    const clients = await listAllClientsService.execute();
+
+    return response.json(clients);
   }
 }
 
