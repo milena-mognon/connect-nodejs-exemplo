@@ -5,10 +5,12 @@ import {
   Entity,
   JoinColumn,
   ManyToOne,
+  OneToMany,
   OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from "typeorm";
+import OrderProduct from "../../../../../modules/orders/infra/typeorm/entities/OrderProduct";
 
 @Entity("produtos")
 export default class Product {
@@ -35,9 +37,12 @@ export default class Product {
   categoria: Category; // categoria não é um produto no banco de dados
   // representa o relacionamento
 
-  @CreateDateColumn()
+  @OneToMany(() => OrderProduct, (order_product) => order_product.produto)
+  pedido_produtos: OrderProduct[];
+
+  @CreateDateColumn({ select: false })
   created_at: Date;
 
-  @UpdateDateColumn()
+  @UpdateDateColumn({ select: false })
   updated_at: Date;
 }
